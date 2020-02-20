@@ -10,6 +10,11 @@ const getTimeDifference = (dates) => {
 
 const getAvailableSlotsTaken = (scheduleItems) => {
     const validWorkHours = [];
+
+    if (!scheduleItems) {
+        return null;
+    }
+
     scheduleItems.forEach(item => {
         if (getTimeDifference(item)) {
             validWorkHours.push({
